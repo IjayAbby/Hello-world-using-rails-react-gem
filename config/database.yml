@@ -23,7 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: rails-react_development
+  database: database_name
+  username: ijay
+  password: 'bitch@100'
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
