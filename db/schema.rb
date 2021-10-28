@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 2021_10_26_132413) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  # create_table "message", id: :serial, force: :cascade do |t|
-  #   t.string "type", limit: 50, null: false
-  #   t.string "title", limit: 20, null: false
-  # end
+  create_table "message", id: :serial, force: :cascade do |t|
+    t.string "type", limit: 50, null: false
+    t.string "title", limit: 20, null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "title"
