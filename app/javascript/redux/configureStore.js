@@ -4,12 +4,12 @@ import thunk from 'redux-thunk';
 import messageReducer from './message/message';
 
 const reducer = combineReducers({
-messageReducer
+  messageReducer,
 });
 
 const store = createStore(
-reducer,
-applyMiddleware(thunk, logger),
+  reducer,
+  applyMiddleware(thunk, logger),
 );
 
-export default store; 
+export default store;

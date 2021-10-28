@@ -1,14 +1,15 @@
-import axios from 'axios'
+import axios from 'axios';
+
 const FETCH_STARTED = 'hello-rails/app/javascript/redux/message/FETCH_STARTED';
 const FETCH_SUCCEDED = 'hello-rails/app/javascript/redux/message/FETCH_SUCCEDED';
 const FETCH_FAILED = 'hello-rails/app/javascript/redux/message/FETCH_FAILED';
-const ROOT_PATH = '/api/v1'
-const MESSAGES_PATH = `${ROOT_PATH}/random-greeting`
+const ROOT_PATH = '/api/v1';
+const MESSAGES_PATH = `${ROOT_PATH}/random-greeting`;
 
 const initialstate = {
-    message: '...loading',
-    loading: false
-}
+  message: '...loading',
+  loading: false,
+};
 
 export const getMessagesStarted = () => ({
   type: FETCH_STARTED,
@@ -16,7 +17,7 @@ export const getMessagesStarted = () => ({
 
 export const getMessagesSuccess = (payload) => ({
   type: FETCH_SUCCEDED,
-  payload
+  payload,
 });
 
 export const getMessagesFailed = (payload) => ({
@@ -24,28 +25,26 @@ export const getMessagesFailed = (payload) => ({
   payload,
 });
 
-export const fetchMessages = () => {
-  return axios.get(MESSAGES_PATH)
-}
+export const fetchMessages = () => axios.get(MESSAGES_PATH);
 
 export const getMessages = () => async (dispatch) => {
   dispatch(getMessagesStarted());
-  const  data  = await fetchMessages()
-  dispatch(getMessagesSuccess(data.data))
-}
+  const data = await fetchMessages();
+  dispatch(getMessagesSuccess(data.data));
+};
 
-export default (state = initialstate, action ) => {
+export default (state = initialstate, action) => {
   switch (action.type) {
     case FETCH_STARTED:
       return {
         ...state,
-        loading: true
-      }
+        loading: true,
+      };
     case FETCH_SUCCEDED:
       return {
-        ...state, message: action.payload, loading: false
-      } 
+        ...state, message: action.payload, loading: false,
+      };
     default:
-      return state
+      return state;
   }
-}
+};
