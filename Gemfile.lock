@@ -155,7 +155,11 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   listen (>= 3.0.5, < 3.2)
+<<<<<<< HEAD
   pg (>= 0.18, < 2.0)
+=======
+  pg (>= 0.18)
+>>>>>>> 7ff7e53c9b381ca8cf1703ad5d24336bb71d6120
   puma (~> 3.11)
   rails (~> 5.2.6)
   react-rails
